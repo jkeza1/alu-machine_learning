@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 """
-this module returns the concatenation of two matrices along a specific axis
+Creates a function that concatenates two matrices along a specific axis
 """
-
 import numpy as np
 
 
 def np_cat(mat1, mat2, axis=0):
-    """
-    returns the concatenation of two matrices along a specific axis
-    """
+    """Concatenates two matrices along a specific axis"""
     return np.concatenate((mat1, mat2), axis=axis)

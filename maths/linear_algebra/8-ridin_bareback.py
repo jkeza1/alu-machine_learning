@@ -1,21 +1,11 @@
 #!/usr/bin/env python3
-"""
-    performs matrix multiplication.
-"""
+"""Creates a function that performs matrix multiplication"""
 
 
 def mat_mul(mat1, mat2):
-    """
-    mat1: list of lists of ints/floats
-    mat2: list of lists of ints/floats
-    """
-    if len(mat1[0]) == len(mat2):
-        return [
-            [
-                sum(a * b for a, b in zip(row, col))
-                for col in zip(*mat2)
-            ]
-            for row in mat1
-        ]
-    else:
+    """Performs matrix multiplication"""
+    if len(mat1[0]) != len(mat2):
         return None
+    return [[sum(a * b for a, b in zip(mat1_row, mat2_col))
+            for mat2_col in zip(*mat2)]
+            for mat1_row in mat1]
