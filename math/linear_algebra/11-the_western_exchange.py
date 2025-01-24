@@ -1,7 +1,16 @@
 #!/usr/bin/env python3
-"""Creates a function that transposes a 2D matrix"""
+"""
+Calculate transpose of a matrix
+"""
 
 
 def np_transpose(matrix):
-    """Returns the transpose of a 2D matrix"""
+    """Returns a transpose of a matrix
+
+    Args:
+        matrix (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     return matrix.transpose()
