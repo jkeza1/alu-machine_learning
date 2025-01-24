@@ -12,7 +12,7 @@ def np_slice(matrix, axes=None):
         matrix (numpy.ndarray): matrix to slice
         axes (dict): dictionary where the key is an axis to slice along and
                      the value is a tuple representing the slice to make along
-                     that axis
+OB                     that axis
 
     Returns:
         numpy.ndarray: the sliced matrix
