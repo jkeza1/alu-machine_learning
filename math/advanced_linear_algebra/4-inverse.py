@@ -1,5 +1,7 @@
 tes the inverse of a matrix
 """
+calculates the inverse of a matrix
+"""
 
 
 def determinant(matrix):
