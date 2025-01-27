@@ -31,6 +31,7 @@ def determinant(matrix):
         answer += sign * matrix[0][j] * determinant(sub_matrix)
     return answer
 
+
 def minor(matrix):
     """
     Calculates the minor of a matrix.
