@@ -1,4 +1,4 @@
-tes the inverse of a matrix
+#!/usr/bin/env python3
 """
 calculates the inverse of a matrix
 """
