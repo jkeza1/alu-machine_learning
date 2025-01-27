@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """
 This module contains the function to calculate the cofactor of a matrix.
