@@ -1,4 +1,6 @@
-s module contains the function to calculate the definiteness of a matrix.
+#!/usr/bin/env python3
+"""
+This module contains the function to calculate the definiteness of a matrix.
 """
 import numpy as np
 
