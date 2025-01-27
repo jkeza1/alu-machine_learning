@@ -4,7 +4,6 @@
 This module contains the function to calculate the cofactor of a matrix.
 """
 
-
 def determinant(matrix):
     """
     Calculates the determinant of a matrix.
