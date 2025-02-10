@@ -1,4 +1,6 @@
-tes the sum of the first n**2 natural numbers
+#!/usr/bin/env python3
+"""
+calculates the sum of the first n**2 natural numbers
 """
 
 
