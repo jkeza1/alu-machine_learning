@@ -1,4 +1,6 @@
- the coefficients of the integral of a polynomial
+#!/usr/bin/env python3
+"""
+returns the coefficients of the integral of a polynomial
 """
 
 
