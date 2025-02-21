@@ -1,54 +1,64 @@
 #!/usr/bin/env python3
-"""creates a class for exponential distribution"""
+""" defines Exponential class that represents exponential distribution """
 
 
 class Exponential:
     """
-    Class that calculates the exponential distribution
-
-    Args:
-    data: list of the data to be used to estimate the distribution
-    lambtha[float]: expected number of occurrences in a given time frame
-    x[int]: given time period
+    class that represents exponential distribution
 
     class constructor:
         def __init__(self, data=None, lambtha=1.)
 
+    instance attributes:
+        lambtha [float]: the expected number of occurances in a given time
+
     instance methods:
-        def pdf(self, x): calculates the PDF for a given period of time
-        dfe cdf(self, x): calculates the CDF for a given period of time
+        def pdf(self, x): calculates PDF for given time period
+        def cdf(self, x): calculates CDF for given time period
     """
+
     def __init__(self, data=None, lambtha=1.):
         """
-        Constructor method
+        class constructor
 
-        Args:
-        data: list of the data to be used to estimate the distribution
-        lambtha: expected number of occurrences in a given time frame
+        parameters:
+            data [list]: data to be used to estimate the distibution
+            lambtha [float]: the expected number of occurances on a given time
+
+        Sets the instance attribute lambtha as a float
+        If data is not given:
+            Use the given lambtha or
+            raise ValueError if lambtha is not positive value
+        If data is given:
+            Calculate the lambtha of data
+            Raise TypeError if data is not a list
+            Raise ValueError if data does not contain at least two data points
         """
-
         if data is None:
-            if lambtha <= 0:
+            if lambtha < 1:
                 raise ValueError("lambtha must be a positive value")
-            self.lambtha = float(lambtha)
+            else:
+                self.lambtha = float(lambtha)
         else:
-            if not isinstance(data, list):
+            if type(data) is not list:
                 raise TypeError("data must be a list")
-            if len(data) < 2:
+            elif len(data) < 2:
                 raise ValueError("data must contain multiple values")
-            self.lambtha = 1 / (sum(data) / len(data))
+            else:
+                lambtha = float(len(data) / sum(data))
+                self.lambtha = lambtha
 
     def pdf(self, x):
         """
-        Calculates the pdf of the class
+        calculates the value of the PDF for a given time period
 
         parameters:
-            x[int]: time period
+            x [int]: time period
+                If x is out of range, return 0
 
-        returns:
+        return:
             the PDF value for x
         """
-        # the time is always positive
         if x < 0:
             return 0
         e = 2.7182818285
@@ -58,19 +68,18 @@ class Exponential:
 
     def cdf(self, x):
         """
-        Calculates the cdf of the class exponential
+        calculates the value of the CDF for a given time period
 
         parameters:
-            x[int]: time period
+            x [int]: time period
+                If x is out of range, return 0
 
-        returns:
+        return:
             the CDF value for x
         """
-        # the time is always positive
         if x < 0:
             return 0
         e = 2.7182818285
         lambtha = self.lambtha
         cdf = 1 - (e ** (-lambtha * x))
         return cdf
-    
