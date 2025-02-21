@@ -45,7 +45,7 @@ class Normal:
                 self.stddev = float(stddev)
                 self.mean = float(mean)
         else:
-            if not isinstance(data, list):
+            if type(data) is not list:
                 raise TypeError("data must be a list")
             elif len(data) < 2:
                 raise ValueError("data must contain multiple values")
@@ -126,4 +126,3 @@ class Normal:
         erf *= (2 / (pi ** (1 / 2)))
         cdf = (1 / 2) * (1 + erf)
         return cdf
-    
